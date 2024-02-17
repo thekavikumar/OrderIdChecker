@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { db } from "../firebase";
 import { ref, onValue, set, get } from "firebase/database";
+import toast from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const [data, setData] = useState();
@@ -13,9 +15,9 @@ function App() {
         // The record exists at the specified path
         const data = snapshot.val();
         setData(data);
+        toast.success("Record found!");
       } else {
-        // The record does not exist at the specified path
-        setData(null);
+        toast.error("No record found with the given orderId");
       }
     });
   };
@@ -33,6 +35,7 @@ function App() {
 
   return (
     <main className="flex flex-col gap-12 items-center justify-center h-screen">
+      <Toaster position="top-center" />
       <img
         src="https://intranet.cb.amrita.edu/sites/default/files/inline-images/AMRIT-removebg-preview_2.png"
         alt="logo"
