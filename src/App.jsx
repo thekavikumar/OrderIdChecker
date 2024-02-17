@@ -74,6 +74,7 @@ function App() {
               </p>
               <button
                 onClick={handleVerified}
+                disabled={data.verified}
                 className="px-3 py-2 rounded-md border border-black"
               >
                 Verified!
