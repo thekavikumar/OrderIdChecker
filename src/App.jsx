@@ -86,6 +86,18 @@ function App() {
           </div>
         )}
       </div>
+      <div className=" absolute p-3 bottom-0 flex flex-wrap text-center items-center w-full justify-center">
+        <p className="text-gray-500 text-sm">
+          Made with ❤️ by{" "}
+          <a
+            href="https://instagram.com/gdscavvchennai"
+            className="text-blue-500 font-medium"
+            target="_blank"
+          >
+            GDSC Amrita Vishwa Vidyapeetham, Chennai
+          </a>
+        </p>
+      </div>
     </main>
   );
 }
